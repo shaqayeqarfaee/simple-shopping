@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    scrollbar-width: none    
 }
 
 /******************************  header  ********************************** */
@@ -25,7 +25,6 @@ header nav{
     width: 100%;
     height: 100%;
     border-radius: 7px;
-
     transition: all .3s linear;
 }
 .shoppingCart img:hover{
@@ -39,10 +38,11 @@ header nav{
  
 /******************************  cart  ********************************** */
 
-.shoppingCardSection{
+.shoppingCartSection{
     background-color: #333;
     width: 500px;
-    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
     border-radius: 20px;
     margin: auto;
     position: absolute;
@@ -52,11 +52,76 @@ header nav{
     transform: translateY(-5px);
     transition: all .2s linear;
 }
-.shoppingCart.active .shoppingCardSection{
+.shoppingCart.active .shoppingCartSection{
     opacity: 1;
     transform: translateY(0);
 
 }
+
+/******************************  add product to cart  ********************************** */
+.productItemCart{
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    background-color: #505050;
+    border-bottom: 2px solid #999999;
+    border-radius: 10px;
+    transition: all .3s linear;
+}
+.productItemCart:hover{
+    background-color: #6a6a6a;
+    color: #fff;
+    box-shadow: 2px 2px 4px #adadad;
+
+}
+.productItemCart:hover .productTitleCart{
+    color: #fff;
+}
+.productImgCart{
+    flex: 0.4;
+    height: 90px;
+}
+.productImgCart img{
+    width: 100%;
+    border-radius: 10px;
+}
+.productTitleCart{
+    flex: 2;
+    color: rgb(35, 35, 35);
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all .3s linear;
+}
+.productTitleCart h3{
+    font-size: 15px;
+}
+.productTitleCart p{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.productTextCart{
+    margin-right: 10px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.removeBtnCart{
+    padding: 5px 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(159, 48, 48);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+.removeBtnCart:hover{
+   color: white;
+}
+
+
+
 
 /******************************  main  ********************************** */
 .products{
@@ -114,13 +179,13 @@ header nav{
     margin: 0 5px;
     border: 1px solid #bebdbd;
     border-radius: 5px;
-    background-color: #2d6396;
+    background-color: #007f2a;
     color: #fff;
     cursor: pointer;
     transition: all .3s linear;
     
 }
 .order button:hover{
-    background-color: #536c8e;
+    background-color: #009e35;
     box-shadow: 0px 0px 3px #9b9a9a;
 }
